@@ -94,7 +94,7 @@ git log
 git diff`,
 
 			"branch": `Git 分支操作：
-git branch
+git branch --show-current
 git checkout -b new_branch
 git checkout branch_name
 git merge branch_name

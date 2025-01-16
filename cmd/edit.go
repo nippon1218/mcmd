@@ -100,3 +100,13 @@ tmux attach -t dev`,
 		},
 	})
 }
+
+func newWindsurfCmd() *cobra.Command {
+	return createBasicCommand(CommandConfig{
+		Use:   "windsurf",
+		Short: "windsurf编辑器命令",
+		Long:  "显示 windsurf编辑器相关的配置和常用命令",
+		Message: `windsurf message
+		`,
+	})
+}

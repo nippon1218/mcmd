@@ -18,12 +18,18 @@ var SysCommandMapping = map[string]string{
 	"net": "netstat -tuln",
 }
 
-// CondaCommandMapping maps conda environment names to activation commands
-var OtherCommandMapping = map[string]string{
-	"pytorch_env": "conda activate pytorch_env",
-	"base":        "conda activate base",
-	"edit":        "vim /data/work/go_work/ws/mcmd/cmd/config.go",
-	"zsh":         "source ~/.zshrc",
+// CommandMap 定义了常用命令的快捷方式映射
+var CommandMap = map[string]string{
+	// 环境相关
+	"base": "conda activate base", // 激活 conda base 环境
+	"zsh":  "source ~/.zshrc",     // 重新加载 zsh 配置
+
+	// 编辑器相关
+	"edit": "vim /data/work/go_work/ws/mcmd/cmd/config.go", // 编辑配置文件
+
+	// 文档查看
+	"dfsx": "google-chrome /home/vincent/Documents/dfsx.png", // 打开东方四象文档
+	"rjjg": "google-chrome /home/vincent/Documents/dfsx.png", // 打开软件架构文档
 }
 
 // GetMappedDirectory returns the mapped directory path for a given shortcut
@@ -32,8 +38,8 @@ func GetMappedDirectory(shortcut string) (string, bool) {
 	return path, exists
 }
 
-// GetCondaCommand returns the conda activation command for a given environment
-func GetOtherCommand(env string) (string, bool) {
-	cmd, exists := OtherCommandMapping[env]
+// GetCommand returns the command for a given shortcut
+func GetCommand(env string) (string, bool) {
+	cmd, exists := CommandMap[env]
 	return cmd, exists
 }

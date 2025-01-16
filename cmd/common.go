@@ -3,6 +3,7 @@ package cmd
 import (
 	"fmt"
 	"os/exec"
+
 	"github.com/spf13/cobra"
 )
 
@@ -113,6 +114,7 @@ func RegisterCommands(rootCmd *cobra.Command) {
 	rootCmd.AddCommand(
 		newVpnCmd(),
 		newLinuxCmd(),
+		newWindowsCmd(),
 		newNetworkCmd(),
 		newGotoCommand(), // 添加goto命令
 	)
@@ -121,10 +123,13 @@ func RegisterCommands(rootCmd *cobra.Command) {
 	rootCmd.AddCommand(
 		newVimCmd(),
 		newTmuxCmd(),
+		newWindsurfCmd(),
 	)
 
-	// llm 命令
+	// ecosda 命令
 	rootCmd.AddCommand(
+		newecosdaCmd(),
+		newGPUCmd(),
 		newLLMCmd(),
 	)
 }

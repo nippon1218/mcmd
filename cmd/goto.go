@@ -108,7 +108,7 @@ alias activate=_mcmd_goto_conda`)
 
 			// Handle conda environment activation
 			if condaEnv != "" {
-				if cmd, exists := GetOtherCommand(condaEnv); exists {
+				if cmd, exists := GetCommand(condaEnv); exists {
 					fmt.Printf("CONDA_CMD:%s\n", cmd)
 					return
 				}
