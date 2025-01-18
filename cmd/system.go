@@ -94,6 +94,9 @@ cat /etc/os-release # 查看系统版本信息 方法A
 lsb_release -a # 查看系统版本信息 方法B
 top -H1
 
+# sudo问题
+vim /etc/sudoers # 配置 sudo
+
 # 服务管理
 systemctl status service_name
 systemctl start service_name
