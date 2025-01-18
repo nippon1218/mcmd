@@ -108,6 +108,7 @@ func RegisterCommands(rootCmd *cobra.Command) {
 		newPythonCmd(),
 		newDockerCmd(),
 		newGitCmd(),
+		newOthersCmd(),
 	)
 
 	// 系统工具命令

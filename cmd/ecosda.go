@@ -83,7 +83,8 @@ func newLLMCmd() *cobra.Command {
 
 func newGPUCmd() *cobra.Command {
 	return createBasicCommand(CommandConfig{
-		Short: "gpu相关命令",
+		Use:   "gpu",
+		Short: "gpu",
 		Long:  "显示gpu系统相关的常用命令和操作",
 		Message: `GPU
 常用GPU：A100, H100, Ascend 910B

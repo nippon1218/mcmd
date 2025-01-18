@@ -9,6 +9,7 @@ var DirectoryMapping = map[string]string{
 	"ebpf":   "/data/work/githubwork/ebpf",
 	"mcmd":   "/data/work/go_work/ws/mcmd",
 	"python": "/data/work/python_work",
+	"pytorch":"/data/work/python_work/pytorch_work",
 }
 
 // SysCommandMapping maps system commands to their shell equivalents
@@ -22,6 +23,7 @@ var SysCommandMapping = map[string]string{
 var CommandMap = map[string]string{
 	// 环境相关
 	"base": "conda activate base", // 激活 conda base 环境
+	"pytorch": "conda activate pytorch_env", // 激活 pytorch_env环境
 	"zsh":  "source ~/.zshrc",     // 重新加载 zsh 配置
 
 	// 编辑器相关
