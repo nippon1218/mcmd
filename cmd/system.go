@@ -101,10 +101,15 @@ vim /etc/sudoers # 配置 sudo
 systemctl status service_name
 systemctl start service_name
 systemctl enable service_name
+# 查看所有服务
+systemctl list-units --type=service
 
 # ssh
 ssh-keygen -t rsa -b 4096 -C "yourname@ecosda.com"
 cat xxx_id_rsa.pub >> ~/.ssh/authorized_keys # 将公钥添加到 ~/.ssh/authorized_keys
+
+# dpkg
+dpkg-deb -c xxx.deb # 查看 deb 文件包含的文件
 
 # 用户管理
 useradd username

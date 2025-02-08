@@ -3,6 +3,7 @@ package cmd
 // DirectoryMapping maps shortcut names to actual directory paths
 var DirectoryMapping = map[string]string{
 	"work":   "/data/work",
+	"tmp":   "/data/tmp",
 	"go":     "/data/work/go_work",
 	"conda":  "/data/work/python_work/pytorch_work",
 	"llm":    "/data/work/llm_work",
@@ -24,6 +25,7 @@ var CommandMap = map[string]string{
 	// 环境相关
 	"base": "conda activate base", // 激活 conda base 环境
 	"pytorch": "conda activate pytorch_env", // 激活 pytorch_env环境
+	"pytorch_env": "conda activate pytorch_env", // 激活 pytorch_env环境
 	"zsh":  "source ~/.zshrc",     // 重新加载 zsh 配置
 
 	// 编辑器相关

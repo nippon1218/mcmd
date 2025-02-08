@@ -107,7 +107,9 @@ func RegisterCommands(rootCmd *cobra.Command) {
 		newGoCmd(),
 		newPythonCmd(),
 		newDockerCmd(),
+		newPodmanCmd(),
 		newGitCmd(),
+		newRepoCmd(),
 		newOthersCmd(),
 	)
 

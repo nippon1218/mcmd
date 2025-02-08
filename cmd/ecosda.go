@@ -32,6 +32,11 @@ Soft_Group/01_工作区/01.02软件架构组/软件栈设计/子系统HLD
 陈小刚: 系统集成和交付技术专家
 安李： 配置管理
 李冠华： 模拟器负责人
+刘志伟： 模拟器
+姚堃： 底软
+包日升： 底软
+Aaron_Zhang:编译器
+
 刘奕： 软件组PM
 
 
@@ -50,6 +55,7 @@ torch 2.4.0+cpu(pip)
 			"ecosda": `qemu(Quick Emulator）是一个开源的虚拟化技术，它可以用来模拟不同的计算机架构和运行多个操作系统。QEMU 主要用于硬件仿真、虚拟化、系统开发和测试等场景。
 ldap: 存储在LDAP（轻量级目录访问协议）目录服务中的用户账户信息
 "office":"chenwenyi@ecosda.com, ecosda-1, "
+pip install dist/torch_xxxxx.whl --force-reinstall
 `,
 		},
 	})
@@ -66,7 +72,9 @@ func newLLMCmd() *cobra.Command {
 微调：将预训练模型微调为适合特定任务的模型
 
 `,
-			"llama":          `llama：`,
+			"ollama": `ollama run tinyllama 
+ollama保存的路径： /usr/share/ollama/.ollama/models
+			`,
 			"models":         `GPT3-175b, BERT-Large, BERT-Base, LLAMA2-7B, LLAMA2-13B, LLAMA2-34B, LLAMA3-7B, LLAMA3-70B`,
 			"transformer":    `transformer：`,
 			"prompt":         `prompt：`,

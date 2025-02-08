@@ -40,12 +40,21 @@ conda --version
 conda update conda
 conda info --envs
 conda create --name myenv python=3.9
+conda create --name myenv --clone python_env
 conda activate myenv
 conda deactivate
 conda list
 conda install package_name
-conda remove package_name`,
+conda remove package_name
+conda remove --name myenv package_name
+conda remove --name myenv --all
+`,
 
+			"pytest": `pytest：
+pytest --version`,
+			"allure": `allure：
+allure generate allure-results -o allure-report --clean,
+allure serve allure-report`,
 			"pip": `Pip 常用命令：
 pip install package_name
 pip uninstall package_name
@@ -77,6 +86,22 @@ sudo systemctl restart docker`,
 	})
 }
 
+func newPodmanCmd() *cobra.Command {
+	return createBasicCommand(CommandConfig{
+		Use:   "podman",
+		Short: "Docker 相关命令",
+		Long:  "显示 Docker 相关的信息和常用命令",
+		Message: `
+podman load -i image.tar # 加载镜像
+podman images
+podman run -itd -v /data:/data --shm-size=8g --name Name image_name bash
+podman exec -it Name bash
+podman stop Name
+podman rm Name
+`,
+	})
+}
+
 // newGitCmd 创建 Git 命令
 func newGitCmd() *cobra.Command {
 	return createCommandWithSubcommands(CommandConfig{
@@ -91,6 +116,10 @@ git add .
 git commit -m "message"
 git status
 git log
+## 假设git 已经提交了文件,需要移除的化这么操作
+git rm -r --cached . # 清空缓存
+git add . 
+#########
 git diff`,
 
 			"branch": `Git 分支操作：
@@ -100,12 +129,25 @@ git checkout branch_name
 git merge branch_name
 git branch -d branch_name`,
 
-			"remote": `Git 远程操作：
+			"remote": `Git 远程操作：		
+git remote remove origin # 本地删除远程
 git remote add origin url
 git push -u origin main
 git pull origin main
 git fetch
 git clone url`,
 		},
+	})
+}
+
+// newGitCmd 创建 Git 命令
+func newRepoCmd() *cobra.Command {
+	return createBasicCommand(CommandConfig{
+		Use:   "repo",
+		Short: "Repo 相关命令",
+		Long:  "显示 Repo 相关的信息和常用命令",
+		Message: `Repo 基本命令：
+repo init --repo-url "https://mirrors.tuna.tsinghua.edu.cn/git/git-repo" -u git@github.com:nippon1218/manifests.git -m test.xml -b main --no-repo-verify
+repo sync -j 4`,
 	})
 }
