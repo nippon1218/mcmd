@@ -18,6 +18,7 @@ svn://192.168.4.145/mynote/dfsx_code/Soft
 192.168.4.132  # 内网gitlab
 192.168.15.49:80 # docker的harbor
 192.168.15.49:80/library/ubuntu22.04_20250107:V1.0
+192.168.15.52:22 #sftp, 用户名秘密同ldap
 
 ## 资料文档
 Soft_Group/01_工作区/01.02软件架构组/软件栈设计/子系统HLD

@@ -119,6 +119,12 @@ git log
 ## 假设git 已经提交了文件,需要移除的化这么操作
 git rm -r --cached . # 清空缓存
 git add . 
+git config --global credential.helper store # 保存密码,下次不用输入
+git config --global user.name "your_name"
+git config --global user.email "your_email"
+## 删除远程分支
+git push origin --delete <branch_name>
+
 #########
 git diff`,
 
